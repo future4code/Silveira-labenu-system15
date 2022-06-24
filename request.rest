@@ -42,3 +42,7 @@ Content-Type: application/json
   "data_nasc": "1989-11-07",
   "turma_id": "1"
 }
+
+
+###
+# Buscar Estudante Através do Nome
