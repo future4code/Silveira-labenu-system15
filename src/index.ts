@@ -1,8 +1,10 @@
 import { app } from "./app";
-import createStudentsTeam from "./endpoints/createStudentsTeam";
 import pingPong from "./endpoints/ping";
-import { StudentsTeamModel } from "./model/StudentsTeamModel";
+import createStudentsTeam from "./endpoints/createStudentsTeam";
+import getAllStudentsTeams from "./endpoints/getAllStudentsTeams";
+import changeStudentsTeamModule from "./endpoints/changeStudentsTeamModule";
 
 app.get("/ping", pingPong);
-app.post("/team", createStudentsTeam);
-
+app.post("/turma", createStudentsTeam);
+app.get("/turma", getAllStudentsTeams);
+app.put("/turma/:id", changeStudentsTeamModule);

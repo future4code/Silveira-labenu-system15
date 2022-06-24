@@ -1,18 +1,10 @@
-export enum moduloType {
-  zero = 0,
-  one = 1,
-  two = 2,
-  tree = 3,
-  four = 4,
-  five = 5,
-  six = 6,
-}
+import { MODULO } from "../types";
 
 export class StudentsTeamModel {
   constructor(
     private id: string,
     private nome: string,
-    private modulo: moduloType
+    private modulo: MODULO
   ) {}
   public getId() {
     return this.id;

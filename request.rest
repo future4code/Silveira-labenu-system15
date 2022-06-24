@@ -5,7 +5,7 @@ GET http://localhost:3003/ping
 ###
 # Cria Nova Turma
 
-POST http://localhost:3003/team
+POST http://localhost:3003/turma
 Content-Type: application/json
 
 {
@@ -15,4 +15,14 @@ Content-Type: application/json
 ###
 # Buscar turmas ativas
 
-GET http://localhost:3003/team
+GET http://localhost:3003/turma
+
+###
+# Mudar turma de módulo
+
+PUT http://localhost:3003/turma/saaaaa
+Content-Type: application/json
+
+{
+  "modulo": 5
+}

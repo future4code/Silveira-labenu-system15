@@ -1,6 +1,7 @@
 import { Request, Response } from "express";
 import { StudentsTeamDatabase } from "../data/StudentsTeamDatabase";
-import { moduloType, StudentsTeamModel } from "../model/StudentsTeamModel";
+import { StudentsTeamModel } from "../model/StudentsTeamModel";
+import { MODULO } from "../types";
 
 export default async function createStudentsTeam(
   req: Request,
@@ -9,7 +10,7 @@ export default async function createStudentsTeam(
   try {
     const { nome } = req.body;
     const id = Date.now() + Math.random().toString();
-    const modulo = moduloType.zero;
+    const modulo = MODULO.zero;
 
     const studentsTeam = new StudentsTeamModel(
       id,
