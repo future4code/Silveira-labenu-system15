@@ -26,3 +26,19 @@ Content-Type: application/json
 {
   "modulo": 5
 }
+
+# **************************************
+
+
+###
+# Cria Novo Estudante
+
+POST http://localhost:3003/estudante
+Content-Type: application/json
+
+{
+  "nome": "Alessandra",
+  "email": "alessandra@gmail.com",
+  "data_nasc": "1989-11-07",
+  "turma_id": "1"
+}

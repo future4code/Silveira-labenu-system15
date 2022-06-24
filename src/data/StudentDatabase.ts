@@ -1,20 +1,21 @@
-import { StudentsTeamModel } from "../model/StudentsTeamModel";
-import { MODULO } from "../types";
+import { StudentModel } from "../model/StudentModel";
 import { BaseDatabase } from "./BaseDatabase";
 
-export class StudentsTeamDatabase extends BaseDatabase {
-  public async insert(studentsTeam: StudentsTeamModel): Promise<any> {
+export class StudentDatabase extends BaseDatabase {
+  public async insert(student:StudentModel): Promise<any> {
     try {
-      await BaseDatabase.connection("turma").insert({
-        id: studentsTeam.getId(),
-        nome: studentsTeam.getNome(),
-        modulo: studentsTeam.getModulo(),
+      await BaseDatabase.connection("estudante").insert({
+        id: student.getId(),
+        nome: student.getNome(),
+        email: student.getEmail(),
+        data_nasc: student.getDataNasc(),
+        turma_id: student.getTurmaId(),
       });
     } catch (error: any) {
       throw new Error(error.sqlMessage || error.message);
     }
   }
-
+  /* 
   public async getAll(): Promise<any> {
     try {
       const result = await BaseDatabase.connection("turma").select("*");
@@ -32,5 +33,5 @@ export class StudentsTeamDatabase extends BaseDatabase {
     } catch (error: any) {
       throw new Error(error.sqlMessage || error.message);
     }
-  }
+  } */
 }
