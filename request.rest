@@ -20,29 +20,43 @@ GET http://localhost:3003/turma
 ###
 # Mudar turma de módulo
 
-PUT http://localhost:3003/turma/saaaaa
+PUT http://localhost:3003/turma/1
 Content-Type: application/json
 
 {
-  "modulo": 5
+  "modulo": 3
 }
 
 # **************************************
 
 
 ###
-# Cria Novo Estudante
+# Cria Novo Estudante  / VERIFICAR SE O ID INFORMADO DO ESTUDANTE E DA TURMA EXISTEM, SE NÃO EXISTIR É NECESSÁRIO PARAR A APLICAÇÃO /
 
 POST http://localhost:3003/estudante
 Content-Type: application/json
 
 {
-  "nome": "Alessandra",
-  "email": "alessandra@gmail.com",
-  "data_nasc": "1989-11-07",
-  "turma_id": "1"
+  "nome": "Ana Carolina",
+  "email": "anaC@gmail.com",
+  "data_nasc": "1986-07-13",
+  "turma_id": "2"
 }
 
 
 ###
 # Buscar Estudante Através do Nome
+
+GET http://localhost:3003/estudante?nome=matheus
+
+
+###
+# Mudar Estudante de Turma  / VERIFICAR SE O ID INFORMADO DO ESTUDANTE E DA TURMA EXISTEM, SE NÃO EXISTIR É NECESSÁRIO PARAR A APLICAÇÃO /
+
+PUT http://localhost:3003/estudante
+Content-Type: application/json
+
+{
+  "estudante_id": "1",
+  "turma_id": "1"
+}

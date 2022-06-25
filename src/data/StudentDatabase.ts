@@ -2,7 +2,7 @@ import { StudentModel } from "../model/StudentModel";
 import { BaseDatabase } from "./BaseDatabase";
 
 export class StudentDatabase extends BaseDatabase {
-  public async insert(student:StudentModel): Promise<any> {
+  public async insert(student: StudentModel): Promise<any> {
     try {
       await BaseDatabase.connection("estudante").insert({
         id: student.getId(),
@@ -15,23 +15,26 @@ export class StudentDatabase extends BaseDatabase {
       throw new Error(error.sqlMessage || error.message);
     }
   }
-  /* 
-  public async getAll(): Promise<any> {
+
+  public async getByName(nome:string): Promise<any> {
     try {
-      const result = await BaseDatabase.connection("turma").select("*");
+      const result = await BaseDatabase.connection("estudante")
+        .select("*")
+        .where("nome", "like", `%${nome}%`);
       return result;
     } catch (error: any) {
       throw new Error(error.sqlMessage || error.message);
     }
   }
 
-  public async changeModule(id: string, modulo: MODULO) {
+  
+  public async changeTeam(estudante_id: string, turma_id: string) {
     try {
-      return await BaseDatabase.connection("turma")
-        .update({ modulo: modulo })
-        .where({ id: id });
+      return await BaseDatabase.connection("estudante")
+        .update({ turma_id: turma_id })
+        .where({ id: estudante_id });
     } catch (error: any) {
       throw new Error(error.sqlMessage || error.message);
     }
-  } */
+  }
 }
