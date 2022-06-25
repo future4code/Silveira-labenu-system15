@@ -60,3 +60,36 @@ Content-Type: application/json
   "estudante_id": "1",
   "turma_id": "1"
 }
+
+# **************************************
+
+
+###
+# Cria Novo Docente  / VERIFICAR SE O ID INFORMADO DA TURMA EXISTE, SE NÃO EXISTIR É NECESSÁRIO PARAR A APLICAÇÃO /
+
+POST http://localhost:3003/docente
+Content-Type: application/json
+
+{
+  "nome": "Gabriel Mina",
+  "email": "gabriel@gmail.com",
+  "data_nasc": "1986-07-13",
+  "turma_id": "2"
+}
+
+###
+# Buscar todos os docentes
+
+GET http://localhost:3003/docente
+
+
+###
+# Mudar Docente de Turma  / VERIFICAR SE O ID INFORMADO DO ESTUDANTE E DA TURMA EXISTEM, SE NÃO EXISTIR É NECESSÁRIO PARAR A APLICAÇÃO /
+
+PUT http://localhost:3003/docente
+Content-Type: application/json
+
+{
+  "docente_id": "2",
+  "turma_id": "1"
+}
