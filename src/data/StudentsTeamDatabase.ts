@@ -10,7 +10,20 @@ export class StudentsTeamDatabase extends BaseDatabase {
         nome: studentsTeam.getNome(),
         modulo: studentsTeam.getModulo(),
       });
-    } catch (error: any) {}
+    } catch (error: any) {
+      throw new Error(error.sqlMessage || error.message);
+    }
+  }
+
+  public async getAllActive(): Promise<any> {
+    try {
+      const result = await BaseDatabase.connection("turma")
+        .select("*")
+        .whereNot("modulo", 0);
+      return result;
+    } catch (error: any) {
+      throw new Error(error.sqlMessage || error.message);
+    }
   }
 
   public async getAll(): Promise<any> {
