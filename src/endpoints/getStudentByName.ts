@@ -16,9 +16,9 @@ export default async function getStudentByName(
     }
 
     const studentDB = new StudentDatabase();
-
     const student = await studentDB.getByName(nome);
 
+    
     if (!student) {
       res.status(404).send([]);
       return;

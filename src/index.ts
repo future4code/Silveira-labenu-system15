@@ -1,7 +1,7 @@
 import { app } from "./app";
 import pingPong from "./endpoints/ping";
 import createStudentsTeam from "./endpoints/createStudentsTeam";
-import getAllStudentsTeams from "./endpoints/getAllStudentsTeams";
+import getAllActiveStudentsTeams from "./endpoints/getAllActiveStudentsTeams";
 import changeStudentsTeamModule from "./endpoints/changeStudentsTeamModule";
 import createStudent from "./endpoints/createStudent";
 import getStudentByName from "./endpoints/getStudentByName";
@@ -17,8 +17,8 @@ app.get("/ping", pingPong);
 
 /* Criar turma */
 app.post("/turma", createStudentsTeam);
-/* Pegar todas as turmas */
-app.get("/turma", getAllStudentsTeams);
+/* Pegar todas as turmas ativas */
+app.get("/turma", getAllActiveStudentsTeams);
 /* Mudar o módulo da turma */
 app.put("/turma/:id", changeStudentsTeamModule);
 
